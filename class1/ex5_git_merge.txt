@@ -1,0 +1,92 @@
+### 5. Create a 'test' branch in your repository.
+    a. Switch between the 'master' branch and the 'test' branch.
+    b. Add a file to the 'test' branch.
+    c. Switch back to the 'master' branch.
+    d. Merge this 'test' branch into your 'master' branch.
+###
+
+WillBlack:class1 wblack$ git branch test
+WillBlack:class1 wblack$ git branch
+* master
+  test
+WillBlack:class1 wblack$ git checkout test
+Switched to branch 'test'
+WillBlack:class1 wblack$ vi my_test.py
+WillBlack:class1 wblack$ more my_test.py
+print "Class1, Example 5 test"
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ python my_test.py
+Class1, Example 5 test
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ git add my_test.py
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ git commit -m "Adding my_test.py"
+[test ed91f55] Adding my_test.py
+ 1 file changed, 1 insertion(+)
+ create mode 100644 class1/my_test.py
+WillBlack:class1 wblack$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+
+WillBlack:class1 wblack$ ls -al
+total 40
+drwxr-xr-x  5 wblack  staff    170 Oct 17 13:47 .
+drwxr-xr-x  7 wblack  staff    238 Oct 17 13:39 ..
+-rw-------  1 wblack  staff  12288 Oct 17 13:43 .ex5_git_merge.txt.swp
+-rw-r--r--  1 wblack  staff    915 Oct 17 13:39 ex3_git_clone.txt
+-rw-r--r--  1 wblack  staff    786 Oct 17 13:42 ex4_git_push.txt
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ git merge test
+Updating 1879a17..ed91f55
+Fast-forward
+ class1/my_test.py | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 class1/my_test.py
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ ls -al
+total 48
+drwxr-xr-x  6 wblack  staff    204 Oct 17 13:47 .
+drwxr-xr-x  7 wblack  staff    238 Oct 17 13:39 ..
+-rw-------  1 wblack  staff  12288 Oct 17 13:43 .ex5_git_merge.txt.swp
+-rw-r--r--  1 wblack  staff    915 Oct 17 13:39 ex3_git_clone.txt
+-rw-r--r--  1 wblack  staff    786 Oct 17 13:42 ex4_git_push.txt
+-rw-r--r--  1 wblack  staff     31 Oct 17 13:47 my_test.py
+WillBlack:class1 wblack$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.ex5_git_merge.txt.swp
+	ex4_git_push.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 379 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To git@github.com:eclecticitguy/pynet_paid.git
+   1879a17..ed91f55  master -> master
+WillBlack:class1 wblack$ 
+WillBlack:class1 wblack$ 

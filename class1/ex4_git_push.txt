@@ -1,0 +1,21 @@
+### 4. Add a file to the repository in the lab environment and then push it up to GitHub.
+
+WillBlack:class1 wblack$ ls
+ex3_git_clone.txt
+
+WillBlack:class1 wblack$ git add ex3_git_clone.txt
+
+WillBlack:class1 wblack$ git commit -m "Adding class1, exercise 3"
+[master 1879a17] Adding class1, exercise 3
+ 1 file changed, 21 insertions(+)
+ create mode 100644 class1/ex3_git_clone.txt
+
+WillBlack:class1 wblack$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 747 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To git@github.com:eclecticitguy/pynet_paid.git
+   516d579..1879a17  master -> master
