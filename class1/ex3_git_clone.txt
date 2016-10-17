@@ -1,0 +1,21 @@
+### 3. Clone the repository that you just created on GitHub into your home directory in the lab environment. ###
+
+WillBlack:Programming wblack$ git clone git@github.com:eclecticitguy/pynet_paid.git
+Cloning into 'pynet_paid'...
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), 4.73 KiB | 0 bytes/s, done.
+Checking connectivity... done.
+
+WillBlack:Programming wblack$ cd pynet_paid/
+
+WillBlack:pynet_paid wblack$ ls -al
+total 40
+drwxr-xr-x   6 wblack  staff    204 Oct 17 13:37 .
+drwxr-xr-x  23 wblack  staff    782 Oct 17 13:37 ..
+drwxr-xr-x  13 wblack  staff    442 Oct 17 13:37 .git
+-rw-r--r--   1 wblack  staff   1045 Oct 17 13:37 .gitignore
+-rw-r--r--   1 wblack  staff  11357 Oct 17 13:37 LICENSE
+-rw-r--r--   1 wblack  staff     12 Oct 17 13:37 README.md
+WillBlack:pynet_paid wblack$ 
