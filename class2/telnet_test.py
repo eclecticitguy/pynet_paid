@@ -15,7 +15,7 @@ def send_command(remote_conn, cmd):
 
 def telnet_connect(ip_addr, telnet_port, telnet_timeout):
     try:
-        return telnetlib.Telnet(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
+        return telnetlib.Telnet(ip_addr, telnet_port, telnet_timeout)
     except socket.timeout:
         sys.exit("Connection timed-out")
 
@@ -33,12 +33,9 @@ def main():
     password = '88newclass'
 
     remote_conn = telnet_connect(ip_addr, TELNET_PORT, TELNET_TIMEOUT)
-    output = login(remote_conn, username, password)    
-    
-    time.sleep(1)
-    output = remote_conn.read_very_eager()
+    login(remote_conn, username, password)
 
-    output = send_command(remote_conn, 'terminal length 0')
+    send_command(remote_conn, 'terminal length 0')
     output = send_command(remote_conn, 'show version')
     
     print output
