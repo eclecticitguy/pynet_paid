@@ -1,0 +1,62 @@
+'''
+c. Write a simple Python module that contains one function that prints 'hello' (module name = my_func.py). 
+Do a test where you import my_func into a new Python script. Test this using the following contexts:
+'''
+
+'''        
+* my_func.py is located in the same directory as your script
+'''
+(applied_python)[wblack@ip-172-30-0-10 class2]$ pwd
+/home/wblack/pynet_paid/class2
+
+(applied_python)[wblack@ip-172-30-0-10 class2]$ ls
+ex1b_libraries.txt  ex1c_lib_path.py  my_func.py  snmp_helper.py  telnet_test.py
+
+(applied_python)[wblack@ip-172-30-0-10 class2]$ python ex1c_lib_path.py
+Hello
+
+'''        
+* my_func.py is located in some random subdirectory (not the same directory as your script)
+'''
+
+(applied_python)[wblack@ip-172-30-0-10 class2]$ pwd
+/home/wblack/pynet_paid/class2
+(applied_python)[wblack@ip-172-30-0-10 class2]$ ls
+ex1b_libraries.txt  ex1c_lib_path.py  snmp_helper.py  subdir  telnet_test.py
+(applied_python)[wblack@ip-172-30-0-10 class2]$ cd subdir
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ pwd
+/home/wblack/pynet_paid/class2/subdir
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ ls
+my_func.py
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ env | grep PYP
+(applied_python)[wblack@ip-172-30-0-10 subdir]$
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ PYTHONPATH=/home/wblack/pynet_paid/class2/subdir
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ env | grep PYT
+PYTHONPATH=/home/wblack/pynet_paid/class2/subdir
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ cd ..
+(applied_python)[wblack@ip-172-30-0-10 class2]$ python ex1c_lib_path.py
+Hello
+(applied_python)[wblack@ip-172-30-0-10 class2]$
+
+
+'''        
+* my_func.py is located in ~/applied_python/lib/python2.7/site-packages/
+'''
+
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ ls
+my_func.py  my_func.pyc
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ pwd
+/home/wblack/pynet_paid/class2/subdir
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ mv my_func.py ~/applied_python/lib/python2.7/site-packages/
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ 
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ ls ~/applied_python/lib/python2.7/site-packages/my_func.py 
+/home/wblack/applied_python/lib/python2.7/site-packages/my_func.py
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ unset PYTHONPATH
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ 
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ env | grep PYT
+(applied_python)[wblack@ip-172-30-0-10 subdir]$ 
+(applied_python)[wblack@ip-172-30-0-10 class2]$ pwd
+/home/wblack/pynet_paid/class2
+(applied_python)[wblack@ip-172-30-0-10 class2]$ python ex1c_lib_path.py 
+Hello
+(applied_python)[wblack@ip-172-30-0-10 class2]$ 
