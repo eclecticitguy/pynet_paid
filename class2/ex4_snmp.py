@@ -18,8 +18,7 @@ OID_list = ('1.3.6.1.2.1.1.5.0', '1.3.6.1.2.1.1.1.0')
 
 def get_snmp_data(input_OID, device):
 
-    OID = input_OID
-    snmp_data = snmp_get_oid(device, oid=OID)
+    snmp_data = snmp_get_oid(device, oid=input_OID)
     output = snmp_extract(snmp_data)
 
     return output
@@ -31,6 +30,7 @@ def main():
 
         hostname, ip_addr = item
         print "Hostname: %s" % hostname
+
         a_device = (ip_addr, COMMUNITY_STRING, SNMP_PORT)
 
         for oid_item in OID_list:
