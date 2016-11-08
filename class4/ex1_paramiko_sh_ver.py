@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+'''
+1. Use Paramiko to retrieve the entire 'show version' output from pynet-rtr2.
+'''
+
 import paramiko
 from getpass import getpass
 from time import sleep
