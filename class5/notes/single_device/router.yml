@@ -1,0 +1,10 @@
+---
+# This is one Ansible play
+- hosts: localhost
+  vars:
+    hostname: pynet-rtr1
+  tasks:
+    - name: Generate configuration file
+      # Template is the name of the Ansible module we're going to execute
+      template: src=/home/wblack/pynet_paid/class5/router1.j2 
+                  dest=/home/wblack/pynet_paid/class5/router1.txt

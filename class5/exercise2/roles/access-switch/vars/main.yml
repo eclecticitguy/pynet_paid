@@ -1,0 +1,7 @@
+---
+switch_configs:
+  - {hostname: pynet-sw1, ip_addr: 1.1.1.1, gw: 1.1.1.0, SNMPv3: True}
+  - {hostname: pynet-sw2, ip_addr: 1.1.2.1, gw: 1.1.2.0, SNMPv3: True}
+  - {hostname: pynet-sw3, ip_addr: 1.1.3.1, gw: 1.1.3.0, SNMPv3: True}
+  - {hostname: pynet-sw4, ip_addr: 1.1.4.1, gw: 1.1.4.0, SNMPv3: False}
+  - {hostname: pynet-sw5, ip_addr: 1.1.5.1, gw: 1.1.5.0, SNMPv3: False}

@@ -1,0 +1,15 @@
+---
+# This is one Ansible play
+- hosts: localhost
+  tasks:
+    - name: Generate configuration file
+      # Template is the name of the Ansible module we're going to execute
+      template: src=/home/wblack/pynet_paid/class5/notes/multiple_devices/routers.j2 
+                  dest=/home/wblack/pynet_paid/class5/notes/multiple_devices/{{item.hostname}}.txt
+      with_items:
+        - hostname: pynet-rtr1
+        - hostname: pynet-rtr2
+        - hostname: pynet-rtr3
+        - hostname: pynet-rtr4
+        - hostname: pynet-rtr5
+        - hostname: pynet-rtr6

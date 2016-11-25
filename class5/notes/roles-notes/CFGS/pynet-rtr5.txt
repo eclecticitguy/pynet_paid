@@ -1,0 +1,11 @@
+service timestamps debug datetime msec localtime show-timezone
+service timestamps log datetime msec localtime show-timezone
+!
+hostname pynet-rtr5
+!
+logging buffered 32000
+no logging console
+enable secret 0 
+!
+interface FastEthernet1
+  ip address 1.1.1.5 255.255.255.0

@@ -1,0 +1,17 @@
+# Beginning of a YAML FILE:
+
+---
+
+# Indentation matters!
+
+# YAML list:
+
+- element1
+- element2
+- element3
+- element4
+
+# YAML dictionary:
+
+- key1: value1
+{key1: value2, key2: value2}
