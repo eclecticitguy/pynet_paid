@@ -1,0 +1,35 @@
+---
+
+- name: Cleanup Arista
+  hosts: arista
+
+  tasks:
+    - name: Remove VLANS
+      eos_vlan: name={{item.name}} vlanid={{item.vlanid}} state=absent
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      with_items:
+        - {name: BLUE1, vlanid: 700}
+        - {name: BLUE2, vlanid: 701}
+        - {name: BLUE3, vlanid: 702}
+
+    - name: Reset interface description
+      eos_interface: name=Ethernet3 description=""
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+    
+    - name: Configure Ethernet3 for access mode, VLAN1
+      eos_switchport: name={{ item }} mode=access access_vlan=1 trunk_allowed_vlans=1-4094 trunk_native_vlan=1
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      with_items:
+        - Ethernet3

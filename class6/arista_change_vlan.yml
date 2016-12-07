@@ -1,0 +1,29 @@
+---
+
+- name: Create Arista VLANs
+  hosts: arista
+
+  tasks:
+    - name: Create BLUE1 VLAN
+      eos_vlan: name=BLUE1 vlanid=700
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: Create BLUE2 VLAN
+      eos_vlan: name=BLUE2 vlanid=701
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+
+    - name: Create BLUE3 VLAN
+      eos_vlan: name=BLUE3 vlanid=702
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https

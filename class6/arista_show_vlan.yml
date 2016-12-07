@@ -1,0 +1,17 @@
+---
+
+- name: Show Arista VLANs
+  hosts: arista
+
+  tasks:
+    - name: Show VLAN
+      eos_facts: include=vlans
+            username={{ eapi_username }}
+            password={{ eapi_password }}
+            host={{ eapi_hostname }}
+            port={{ eapi_port }}
+            transport=https
+      register: result
+
+    - debug: 
+        var: result
